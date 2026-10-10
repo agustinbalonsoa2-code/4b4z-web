@@ -1,0 +1,81 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>4B4Z | Minecraft Server</title>
+<style>
+:root{color-scheme:dark;--bg:#080a0d;--panel:#11151a;--text:#f2f5f7;--muted:#9aa6b2;--green:#54d36b;--border:#29313a}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif}
+nav{position:sticky;top:0;background:#080a0d;padding:18px;display:flex;justify-content:space-between;border-bottom:1px solid var(--border)}
+.brand{font-weight:900;letter-spacing:3px;font-size:22px}
+.brand span{color:var(--green)}
+nav a{color:var(--muted);margin:8px;text-decoration:none}
+.hero{text-align:center;padding:80px 20px}
+.hero h1{font-size:clamp(55px,12vw,100px);margin:15px}
+.hero p{color:var(--muted)}
+button{padding:12px 18px;border-radius:7px;border:1px solid var(--green);background:var(--green);color:#071008;font-weight:bold;cursor:pointer}
+.wrap{max-width:1000px;margin:auto;padding:20px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:22px;margin-bottom:14px}
+.label{color:var(--muted);font-size:12px}
+.value{font-size:25px;font-weight:bold;margin-top:8px}
+section{scroll-margin-top:80px}
+h2{margin-top:35px}
+footer{text-align:center;padding:25px;color:var(--muted);border-top:1px solid var(--border)}
+@media(max-width:650px){.grid{grid-template-columns:1fr}nav a{margin:3px;font-size:11px}.hero{padding:55px 15px}}
+</style>
+</head>
+<body>
+<nav>
+<div class="brand">4<span>B4Z</span></div>
+<div>
+<a href="#inicio">INICIO</a>
+<a href="#servidor">SERVIDOR</a>
+<a href="#noticias">NOTICIAS</a>
+<a href="#reglas">REGLAS</a>
+</div>
+</nav>
+<main id="inicio">
+<section class="hero">
+<p style="color:#54d36b;letter-spacing:3px">MINECRAFT SERVER</p>
+<h1>4B4Z</h1>
+<p>La página oficial de 4B4Z. Entra, juega y forma parte de la comunidad.</p>
+<button onclick="document.getElementById('servidor').scrollIntoView({behavior:'smooth'})">VER SERVIDOR</button>
+</section>
+<section class="wrap" id="servidor">
+<div class="grid">
+<div class="card"><div class="label">ESTADO</div><div class="value">ONLINE</div></div>
+<div class="card"><div class="label">JUGADORES</div><div class="value">0 / 20</div></div>
+<div class="card"><div class="label">VERSIÓN</div><div class="value">Minecraft</div></div>
+</div>
+<h2>Conéctate</h2>
+<p>Usa esta dirección para entrar al servidor:</p>
+<div class="card"><strong>4b4z.org</strong> <button onclick="copiarIP()">COPIAR IP</button><p id="mensaje"></p></div>
+</section>
+<section class="wrap" id="noticias">
+<h2>Noticias</h2>
+<div class="card"><h3>Bienvenido a 4B4Z</h3><p>La página oficial está comenzando. Próximamente podremos conectar datos reales del servidor.</p></div>
+<div class="card"><h3>Próximamente</h3><p>Estado real, jugadores conectados, Discord, estadísticas y más.</p></div>
+</section>
+<section class="wrap" id="reglas">
+<h2>Reglas</h2>
+<div class="card"><ol><li>Respetar a los demás jugadores.</li><li>No usar trampas o modificaciones prohibidas.</li><li>No aprovechar errores del servidor para obtener ventajas.</li></ol></div>
+</section>
+</main>
+<footer>4B4Z • Minecraft Server • Página oficial</footer>
+<script>
+async function copiarIP(){
+try{
+await navigator.clipboard.writeText('4b4z.org');
+document.getElementById('mensaje').textContent='IP copiada';
+}catch(e){
+document.getElementById('mensaje').textContent='Copia manualmente: 4b4z.org';
+}
+}
+</script>
+</body>
+</html>
